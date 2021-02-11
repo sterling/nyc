@@ -432,7 +432,7 @@ class NYC {
         const report = await this.coverageFileLoad(f, baseDirectory)
         map.merge(report)
       },
-      { concurrency: os.cpus().length }
+      { concurrency: 1 }
     )
 
     map.data = await this.sourceMaps.remapCoverage(map.data)
